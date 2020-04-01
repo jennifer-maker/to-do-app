@@ -31,7 +31,7 @@ toDos.push({
 
      delete_btn.addEventListener('click',  event =>  {
        toDos =toDos.filter(function(item){
-         return item.id (=> toDo.id;
+         return item.id !== toDo.id;
          })
 
  renderTheUI();
