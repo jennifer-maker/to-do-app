@@ -1,5 +1,16 @@
 
+h1 {
+  color: 	RGB(231,38,101);
+  font-weight: 600;
+}
+
+form {
+  color: 	RGB(14,152,3));
+  font-weight: lighter;
+}
+
 button {
   color: 	RGB(238,122,159);
   font-weight: bold;
+
 }
