@@ -2,7 +2,7 @@ function onReady(){
 
     const addToDoForm = document.getElementById('addToDoForm');
       let toDos = [];
-      let id = 0;
+      let id = 1;
     function createNewToDo() {
 
 const newToDoText = document.getElementById('newToDoText');
