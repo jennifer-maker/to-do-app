@@ -29,14 +29,12 @@ toDos.push({
      const delete_btn = document.createElement('button');
      delete_btn.textContent = "Delete"
 
-     delete_btn.addEventListener('click',  event =>  {
-       toDos =toDos.filter(function(item){
-         return item.id !== toDo.id;
-         })
+     delete_btn.addEventListener('click', function(event){
+        //this.parentElement represents the button's li parent
+        toDoList.removeChild(this.parentElement);
 
- renderTheUI();
-  });
-
+      })
+      
      newLi.textContent = toDo.title;
      toDoList.appendChild(newLi);
      newLi.appendChild(checkbox);

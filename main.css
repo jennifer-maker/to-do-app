@@ -12,5 +12,7 @@ form {
 button {
   color: 	RGB(238,122,159);
   font-weight: bold;
-
+}
+background {
+  color: RGB(238,122,159);
 }
