@@ -32,9 +32,9 @@ toDos.push({
      delete_btn.addEventListener('click', function(event){
         //this.parentElement represents the button's li parent
         toDoList.removeChild(this.parentElement);
-
+        deleteButton.classList.add('mdl-button', 'mdl-js-button', 'mdl-button--icon', 'newMdl');
       })
-      
+
      newLi.textContent = toDo.title;
      toDoList.appendChild(newLi);
      newLi.appendChild(checkbox);
