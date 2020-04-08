@@ -1,53 +1,35 @@
 function onReady(){
 
-    const addToDoForm = document.getElementById('addToDoForm');
-      let toDos = [];
-      let id = 1;
-    function createNewToDo() {
+const ADD_TODO_FORM = document.getElementById('addToDoForm');
+const NEW_TODO_TEXT = document.getElementById('newToDoText');
+const TODO_LIST = document.getElementById('toDoList');
 
-const newToDoText = document.getElementById('newToDoText');
-if (!newToDoText.value) {return; }
+ADD_TODO_FORM.addEventListener('submit', (event) => {
+  event.preventDefault();
+  let title = NEW_TODO_TEXT.value;
+if (title=="") {
+  alert("Please enter task!");
+  return;
+}
+let newLi = document.createElement('li');
+let checkbox = document.createElement('input');
+checkbox.type = "checkbox";
 
-toDos.push({
-     title: newToDoText.value,
-     complete: false
-   });
+let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = "Delete!";
 
-   newToDoText.value = '';
-   renderTheUI();
- }
-
- function renderTheUI() {
-   const toDoList = document.getElementById('toDoList');
-   toDoList.textContent = '';
-
-   toDos.forEach(function(toDo) {
-     const newLi = document.createElement('li');
-     const checkbox = document.createElement('input');
-     checkbox.type = "checkbox";
-
-     const delete_btn = document.createElement('button');
-     delete_btn.textContent = "Delete"
-
-     delete_btn.addEventListener('click', function(event){
-        //this.parentElement represents the button's li parent
-        toDoList.removeChild(this.parentElement);
-        deleteButton.classList.add('mdl-button', 'mdl-js-button', 'mdl-button--icon', 'newMdl');
+  deleteBtn.addEventListener('click', function (event){
+      this.parentElement
+      TODO_LIST.removeChild(this.parentElement);
       })
-
-     newLi.textContent = toDo.title;
-     toDoList.appendChild(newLi);
-     newLi.appendChild(checkbox);
-     newLi.appendChild(delete_btn);
-      });
- }
-
- addToDoForm.addEventListener('submit', event => {
-   event.preventDefault();
-   createNewToDo();
- });
-
- }
- window.onload = function() {
- onReady();
- };
+    newLi.textContent= title;
+    newLi.appendChild(checkbox);
+    newLi.appendChild(deleteBtn);
+    TODO_LIST.appendChild(newLi);
+    NEW_TODO_TEXT.value="";
+  });
+}
+window.onload = function () {
+  alert("The window has loaded!");
+  onReady();
+};
